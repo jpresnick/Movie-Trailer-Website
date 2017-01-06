@@ -122,7 +122,8 @@ movie_tile_content = '''
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" width="220" height="342">
     <h2>{movie_title}</h2>
-    <palign="center">{movie_rating}&emsp;&emsp;{movie_duration}</p>
+    <p>{movie_stars}</p>
+    <p align="center">{movie_rating}&emsp;&emsp;{movie_duration}</p>
     <p align="justify">{movie_storyline}</p>
 </div>
 '''
@@ -136,11 +137,25 @@ def create_movie_tiles_content(movies):
         youtube_id_match = youtube_id_match or re.search(r'(?<=be/)[^&#]+', movie.trailer_youtube_url)
         trailer_youtube_id = youtube_id_match.group(0) if youtube_id_match else None
 
+        # Make a string of stars
+        count = 0
+        movie_stars =""
+        for star in range(movie.stars):
+            # &#9733; is the unicode for a solid star.
+            movie_stars += "&#9733;"
+            count += 1
+        while count < 10:
+            # &#9734; is the unicode for a hollow star.
+            movie_stars += "&#9734;"
+            count += 1
+            
         # Append the tile for the movie with its content filled in
         content += movie_tile_content.format(
             movie_title=movie.title,
+            #movie_stars=movie_stars,
             movie_storyline=movie.storyline,
             movie_rating=movie.rating,
+            movie_stars=movie_stars,
             movie_duration=movie.duration,
             poster_image_url=movie.poster_image_url,
             trailer_youtube_id=trailer_youtube_id
