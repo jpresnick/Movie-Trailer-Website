@@ -14,4 +14,4 @@ and the launching of the website using open_movies_page(). I added onto this cod
 
 ## Requirements
 In order to run this on your own computer you will need to have Python installed. Once you have done that, 
-make sure all three files are saved in the same directory, and then open entertainment_center.py. Your webpage should open in the brower.
+make sure all three files are saved in the same directory, and then open entertainment_center.py. When you run entertainment_center.py your webpage should open in the brower.
