@@ -10,7 +10,7 @@ Entertainment_center.py is used to create movies (using media.py), as well as to
 Media.py creates a movie object containing title, plot, poster image, and a link to the youtube trailer
 ### - fresh_tomatoes.py
 Fresh_tomatoes.py was proveded by Udacity to facilitiate the design of the website using bootstrap, 
-and the launching of the website using open_movies_page()
+and the launching of the website using open_movies_page(). I added onto this code to add some additional functionality.
 
 ## Requirements
 In order to run this on your own computer you will need to have Python installed. Once you have done that, 
